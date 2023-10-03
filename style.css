@@ -14,15 +14,17 @@ body{
 }
 
 header{
-    position: absolute;
+    position: fixed;
     top:0;
     left: 0;
     width: 100%;
+    height: 11%;
     padding: 30px 100px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 10000;
+    transition: background-color 0.5s;
 }
 
 header .logo{
@@ -154,6 +156,23 @@ section img#mountains_front{
 }
 
 .work p{
+    font-size: 1em;
+    color:#a2b2ee
+}
+
+.contact{
+    position: relative;
+    padding: 100px;
+    background-color: #26292B;   
+}
+
+.contact h2{
+    font-size: 3.5em;
+    margin-bottom: 10px;
+    color: #a2b2ee;
+}
+
+.contact p{
     font-size: 1em;
     color:#a2b2ee
 }
