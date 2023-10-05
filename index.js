@@ -41,6 +41,7 @@ function updateActiveLink() {
             minDistanceFromMidpoint = distanceFromMidpoint;
             currentSectionId = section.id;
         }
+        console.log(currentSectionId);
     });
 
     const navLinks = document.querySelectorAll('header ul li a');
