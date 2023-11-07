@@ -25,7 +25,7 @@
         </section>
         <div class = "about" id = "about">
             <h2>
-                Here's my Story
+                Here's my story...
             </h2>
             <p>
                 <img src = "mugshot.png" id="mugshot">
@@ -89,34 +89,45 @@
                 Work History
             </h3>
             <div class="timeline">
-                <div class="event">
-                    <h3>2020</h3>
-                    <p>Started working at the Qui</p>
-                </div>
-                <div class="event">
-                    <h3>2018</h3>
-                    <p>Graduated from ABC University with a degree in Computer Science.</p>
-                </div>
-                <div class="event">
-                    <h3>2018</h3>
-                    <p>Graduated from ABC University with a degree in Computer Science.</p>
-                </div>
-                <div class="event">
-                    <h3>2018</h3>
-                    <p>Graduated from ABC University with a degree in Computer Science.</p>
-                </div>
-                <div class="event">
-                    <h3>2018</h3>
-                    <p>Graduated from ABC University with a degree in Computer Science.</p>
-                </div>
-                
+                <button class="event" 
+                    data-img="watermine.png" 
+                    data-title="The Watermine" 
+                    data-info="Supervisor" 
+                    data-list-items="Item 1,Item 2,Item 3">
+                    2011
+                </button>
+                <button class="event" 
+                    data-img="qui.png" 
+                    data-title="The Qui" 
+                    data-info="Server" 
+                    data-list-items="Item 1,Item 2,Item 3">
+                    2012
+                </button>
+                <button class="event" 
+                    data-img="idtech.png" 
+                    data-title="IdTech" 
+                    data-info="Programming instructor" 
+                    data-list-items="Item 1,Item 2,Item 3">
+                    2012
+                </button>
             </div>
+            <div class="display">
+                <h3 id="eventTitle"></h3>
+                <div id="eventText">
+                    <img src="mugshot.png" alt="Event image" id="eventImage">
+                    <div class="text-content">
+                        <h4 id="eventDetails">Click an event to see more details</h4>
+                        <ul id="eventList"></ul>
+                    </div>
+                </div>
+            </div>            
         </div>
         <div class = "contact" id = "contact">
             <h2>
                 Let's talk
             </h2>
             <p>
+                <img src = "mugshot.png" id="mugshot">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
                 Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
                 dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non 

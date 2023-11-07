@@ -41,7 +41,6 @@ function updateActiveLink() {
             minDistanceFromMidpoint = distanceFromMidpoint;
             currentSectionId = section.id;
         }
-        console.log(currentSectionId);
     });
 
     const navLinks = document.querySelectorAll('header ul li a');
@@ -61,15 +60,48 @@ function headerTransparency(){
 
     if (viewportMidpoint >= 1000){ //When the mniddle of the screen passes 600 the transition will trigger
         // If user is on the "home" section
-        header.style.backgroundColor = 'rgba(38, 41, 43, 1)';
+        header.classList.add('scrolled');
     } else {
-        header.style.backgroundColor = 'transparent';
+        header.classList.remove('scrolled');
     }
 }
+
+function displayTimelineEvents() {
+    const events = document.querySelectorAll('.event');
+
+    const eventTitle = document.getElementById('eventTitle');
+    const eventDetails = document.getElementById('eventDetails');
+    const eventList = document.getElementById('eventList');
+    const eventImage = document.getElementById('eventImage');
+
+    events.forEach(event => {
+        event.addEventListener('click', function() {
+            const title = this.getAttribute('data-title');
+            const details = this.getAttribute('data-info');
+            const imagePath = this.getAttribute('data-img');
+            const listItems = this.getAttribute('data-list-items').split(',');
+
+            eventTitle.textContent = title;
+            eventDetails.textContent = details;
+            eventImage.src = imagePath;
+
+            eventList.innerHTML = '';
+            listItems.forEach(item => {
+                const li = document.createElement('li');
+                li.textContent = item;
+                eventList.appendChild(li);
+            });
+        });
+    });
+}
+
+
+
 
 // Scroll event listener
 window.addEventListener('scroll', function(event) {
     updateStylesOnScroll();
     updateActiveLink();
     headerTransparency();
+    displayTimelineEvents();
 });

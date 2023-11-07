@@ -1,4 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Young+Serif&display=swap');
+:root{
+    --light-blue: #A2B2EE;
+    --dark-blue: #5f7adb;
+    --light-black: #2E3239;
+    --black:#26292B;
+    --white:#FFFAFF;
+    --brown:#837474;
+}
 *{
     margin: 0;
     padding: 0;
@@ -10,11 +18,12 @@
 
 body{
     min-height: 100vh;
-    background: linear-gradient(#26292B, #5F7ADB);
+    background: linear-gradient(var(--black), var(--light-blue));
 }
 
 header{
     position: fixed;
+    background-color: transparent;
     top:0;
     left: 0;
     width: 100%;
@@ -24,11 +33,17 @@ header{
     justify-content: space-between;
     align-items: center;
     z-index: 10000;
-    transition: background-color 0.5s;
+    border-bottom: 2px solid transparent;;
+    transition: background-color 0.5s, border-bottom 0.5s;
+}
+
+.scrolled{
+    background-color: var(--black);
+    border-bottom: 5px solid var(--light-black);;
 }
 
 header .logo{
-    color: #a2b2ee;
+    color: var(--dark-blue);
     font-weight: 700;
     text-decoration: none;
     font-size: 2em;
@@ -50,22 +65,22 @@ header ul li{
 header ul li a{
     text-decoration: none;
     padding: 6px 15px;
-    color: #a2b2ee;
+    color: var(--light-blue);
     border-radius: 20px;
 }
 
 header ul li a:hover{
-    background: #fff;
-    color: #26292B;
+    background: var(--white);
+    color: var(--black);
 }
 header ul li a:active{
-    background: #837474;
-    color: #26292B;
+    background: var(--dark-blue);
+    color: var(--black);
 }
 
 header ul li a.active{
-    background: #a2b2ee;
-    color: #26292B;
+    background: var(--light-blue);
+    color: var(--black);
 }
 
 section{
@@ -76,6 +91,8 @@ section{
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow-x: hidden;
+    overflow-y: hidden;
 } 
 
 section::before{
@@ -84,7 +101,7 @@ section::before{
     bottom: 0;
     width: 100%;
     height: 100px;
-    background: linear-gradient(to top,#26292B,transparent);
+    background: linear-gradient(to top,var(--black),transparent);
     z-index: 1000;
 }
 
@@ -93,7 +110,7 @@ section img{
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: auto;
     object-fit: cover;
     pointer-events: none;
 }
@@ -108,14 +125,8 @@ section img#mountains_front{
 
 p img#mugshot{
     float: left;
-    margin: 5px;
+    margin-right: 20px;
     width: 19.5%;
-    height: 19.5%;
-}
-
-img#tempTimeline{
-    margin: 5px;
-    width: 80%;
     height: auto;
 }
 
@@ -125,7 +136,7 @@ img#tempTimeline{
 
 #text{
     position: absolute;
-    color: #a2b2ee;
+    color: var(--light-blue);
     white-space: nowrap;
     font-size:  5.5vw;
     z-index: 9;
@@ -136,8 +147,8 @@ img#tempTimeline{
     display: inline-block;
     padding: 8px 30px;
     border-radius: 40px;
-    background: #fff;
-    color: #26292B;
+    background: var(--white);
+    color: var(--black);
     font-size: 1.5em;
     z-index: 11;
     transform: translateY(100px);
@@ -146,27 +157,44 @@ img#tempTimeline{
 .about{
     position: relative;
     padding: 100px;
-    background-color: #26292B;   
+    background-color: var(--black);   
 }
+
 
 .about h2{
     font-size: 3.5em;
     margin-bottom: 10px;
-    color: #a2b2ee;
+    color: var(--dark-blue);
 }
 
 .about p{
     font-size: 1em;
-    color:#a2b2ee
+    color:var(--light-blue)
 }
 
 .work{
     position: relative;
     padding: 100px;
-    background-color: #26292B;
+    background-color: var(--black);
     display: grid;
     grid-template-columns: 1fr;
     gap: 20px;
+}
+
+
+.work h2{
+    margin: auto;
+    text-align: center;
+    width: 75%;
+    padding: 10px;
+    border-bottom: 2px solid var(--light-black);
+}
+
+.work h3{
+    margin: auto;
+    text-align: center;
+    width: 75%;
+    padding: 10px;
 }
 
 .columns{
@@ -175,27 +203,71 @@ img#tempTimeline{
     gap: 20px;
 }
 
+.column{
+    padding: 2em;
+    border-radius: 0.3em;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 3px, rgba(255, 255, 255, 0.20) 0px 3px 6px;
+    /* border: 3px dashed green; */
+}
+
 .timeline {
-    white-space: nowrap;
-    overflow-x: auto;
-    padding: 20px 0;
     display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    width: 90%;
+    padding-left: 10%;
+}
+
+button{
+    color: var(--light-blue);
+    font-size: 1.2em;
+}
+
+button:hover{
+    color: var(--white);
 }
 
 .event {
-    display: inline-block;
-    width: fit-content;
-    margin-right: 50px;
-    vertical-align: top;
-    background-color: #837474;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    height: auto;   
+    padding: 10px;
+    cursor: pointer;
+    background-color: var(--dark-blue);
+    border-radius: 10px;
+    transition: background-color 0.3s;
+    width: 200px;
+    height: 50px;
+    outline: none; 
+    text-decoration-color: var(--white);
 }
 
-.event:last-child {
-    margin-right: 0;
+.event:hover {
+    background-color: var(--light-black);
+    box-shadow: rgba(0, 0, 0, 0.16) 3px 6px 6px, rgba(255, 255, 255, 0.20) 0px 3px 6px;
+}
+
+.display {
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 3px, rgba(255, 255, 255, 0.20) 0px 3px 6px;
+    border-radius: 10px;
+    background-color: var(--light-black);
+    min-height: 100px;
+}
+
+#eventText {
+    display: flex;
+    align-items: start;
+    
+}
+
+#eventImage {
+    max-width: 200px; 
+    margin-right: 10px;
+}
+
+#eventList {
+    padding-left: 20px;
+}
+.text-content {
+    width: 70%;
 }
 
 p img#temp{
@@ -208,33 +280,43 @@ p img#temp{
 .work h2{
     font-size: 3.5em;
     margin-bottom: 10px;
-    color: #a2b2ee;
+    color: var(--dark-blue);
 }
 
 .work h3{
     font-size: 2em;
     margin-bottom: 10px;
-    color: #a2b2ee;
+    color: var(--dark-blue);
+}
+
+.work h4{
+    font-size: 1em;
+    margin-bottom: 10px;
+    color: var(--dark-blue);
 }
 
 .work p{
     font-size: 1em;
-    color:#a2b2ee
+    color:var(--light-blue);
+}
+
+.work ul{
+    color: var(--light-blue);
 }
 
 .contact{
     position: relative;
     padding: 100px;
-    background-color: #26292B;   
+    background-color: var(--black);   
 }
 
 .contact h2{
     font-size: 3.5em;
     margin-bottom: 10px;
-    color: #a2b2ee;
+    color: var(--dark-blue);
 }
 
 .contact p{
     font-size: 1em;
-    color:#a2b2ee
+    color:var(--light-blue)
 }
