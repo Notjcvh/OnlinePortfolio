@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Young+Serif&display=swap');
+:root{
+    --light-blue: #A2B2EE;
+    --dark-blue: #5f7adb;
+    --light-black: #2E3239;
+    --black:#1D1E23;
+    --white:#FFFAFF;
+    --brown:#837474;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Young Serif', serif;
+    overscroll-behavior: none;
+    overflow: hidden;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background: var(--black);
+}
+
+h1 {
+    color: var(--white);
+    font-size: 3.5rem;
+    font-weight: 600;
+}
+
+h1 span {
+    color: var(--dark-blue);
+    position: relative;
+}
+
+h1 span::before {
+    content: "";
+    height: 30px;
+    width: 2px;
+    position: absolute;
+    top: 50%;
+    right: -8px;
+    background: var(--dark-blue);
+    transform: translateY(-45%);
+    animation: blink 0.7s infinite;
+}
+
+h1 span.stop-blinking::before {
+    animation: none;
+}
+
+@keyframes blink {
+    50% { opacity: 0 }
+}
+
+.button{
+  position: absolute;
+  transition: all;
+  background-color: var(--white);
+  border-radius: 1em;
+  padding: 0.5em 1em;
+  top: 50em;
+  transition: top 1s;
+}
+
+h2{
+  color: var(--black);
+  font-size: 3rem;
+  font-weight: 600;
+}
+
+a{
+  text-decoration: none;
+}

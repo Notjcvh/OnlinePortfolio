@@ -37,9 +37,13 @@ function updateActiveLink() {
         const distanceFromMidpoint = Math.abs(viewportMidpoint - sectionMidpoint);
 
         // If this section's midpoint is closest to the viewport's midpoint, update currentSectionId
+        if(viewportMidpoint >= 480 && viewportMidpoint < 1758){
+            currentSectionId = "about";
+        }
         if (distanceFromMidpoint < minDistanceFromMidpoint) {
             minDistanceFromMidpoint = distanceFromMidpoint;
             currentSectionId = section.id;
+            console.log(viewportMidpoint);
         }
     });
 

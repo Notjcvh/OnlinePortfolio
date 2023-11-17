@@ -1,0 +1,150 @@
+<!doctype html>
+<html>
+    <head>
+        <div class = "home" id="home"></div>
+        <title>Isaac Hong's online portfolio</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <header>    
+            <a href="#home" class="logo">Isaac Hong</a>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#work">Works</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </header>
+        <section class ='home' id="home">
+            <img src = "./Images/stars.png" id="stars">
+            <img src = "./Images/moon.png" id="moon">
+            <img src = "./Images/mountains_behind.png" id="mountains_behind">
+            <h2 id="text">Isaac Hong</h2>
+            <a href="#about" id="btn"> Explore </a>
+            <img src = "./Images/mountains_front.png" id="mountains_front">
+        </section>
+        <div class = "about" id = "about">
+            <h2>
+                Here's my story...
+            </h2>
+            <p>
+                <img src = "./Images/mugshot.png" id="mugshot">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
+                dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non 
+                proident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
+                <br><br>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
+                dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non 
+                proident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
+                <br><br>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
+                dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non 
+                proident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
+
+            </p>
+        </div>
+        <div class = "work" id = "work">
+            <h2>
+                My Works
+            </h2>
+            <div class = 'columns'>
+                <a href="https://www.minecraft.net/en-us">
+                    <div class = 'column'>
+                        <p>
+                            <img src = "./Images/temp.png" id="temp">    
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
+                            dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non 
+                            proident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
+                        </p>
+                    </div>
+                </a>
+                <a href="https://www.minecraft.net/en-us">
+                    <div class = 'column'>
+                        <p>
+                            <img src = "./Images/temp.png" id="temp">    
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
+                            dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non 
+                            proident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
+                        </p>
+                    </div>
+                </a>
+                <a href="https://www.minecraft.net/en-us">
+                    <div class = 'column'>
+                        <p>
+                            <img src = "./Images/temp.png" id="temp">    
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
+                            dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non 
+                            proident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
+                        </p>
+                    </div>
+                </a>
+            </div>
+            <h3>
+                Work History
+            </h3>
+            <div class="timeline">
+                <button class="event" 
+                    data-img="./Images/watermine.png" 
+                    data-title="The Watermine" 
+                    data-info="Supervisor" 
+                    data-list-items="Item 1,Item 2,Item 3">
+                    2011
+                </button>
+                <button class="event" 
+                    data-img="./Images/qui.png" 
+                    data-title="The Qui" 
+                    data-info="Server" 
+                    data-list-items="Item 1,Item 2,Item 3">
+                    2012
+                </button>
+                <button class="event" 
+                    data-img="./Images/idtech.png" 
+                    data-title="IdTech" 
+                    data-info="Programming instructor" 
+                    data-list-items="Item 1,Item 2,Item 3">
+                    2012
+                </button>
+            </div>
+            <div class="display">
+                <h3 id="eventTitle"></h3>
+                <div id="eventText">
+                    <img src="./Images/mugshot.png" alt="Event image" id="eventImage">
+                    <div class="text-content">
+                        <h4 id="eventDetails">Click an event to see more details</h4>
+                        <ul id="eventList"></ul>
+                    </div>
+                </div>
+            </div>            
+        </div>
+        <div class = "contact" id = "contact">
+            <h2>
+                Let's talk
+            </h2>
+            <p>
+                <img src = "./Images/mugshot.png" id="mugshot">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
+                dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non 
+                proident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
+                <br><br>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
+                dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non 
+                proident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
+                <br><br>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
+                dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non 
+                proident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
+
+            </p>
+        </div>
+        <script src="index.js" defer></script>
+    </body>
+</html>
