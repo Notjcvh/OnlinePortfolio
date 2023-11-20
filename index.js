@@ -22,7 +22,7 @@ function updateStylesOnScroll() {
 
 // Function to update active link based on section in view
 function updateActiveLink() {
-    const sections = document.querySelectorAll('.home, div');
+    const sections = document.querySelectorAll('.home, .nav-section');
     let currentSectionId;
     let minDistanceFromMidpoint = Infinity;  // To track the smallest distance to viewport's midpoint
 
@@ -30,23 +30,21 @@ function updateActiveLink() {
 
     sections.forEach((section) => {
         const sectionTop = section.offsetTop;
-        const sectionBottom =  section.offsetHeight;
-        const sectionMidpoint = sectionTop + (sectionBottom / 2);  // Midpoint of the section
+        const sectionBottom = sectionTop + section.offsetHeight;
+        const sectionMidpoint = (sectionTop + sectionBottom) / 2;  // Midpoint of the section
 
         // Calculate the distance from the viewport's midpoint
         const distanceFromMidpoint = Math.abs(viewportMidpoint - sectionMidpoint);
-
+        
         // If this section's midpoint is closest to the viewport's midpoint, update currentSectionId
-        if(viewportMidpoint >= 480 && viewportMidpoint < 1758){
-            currentSectionId = "about";
-        }
         if (distanceFromMidpoint < minDistanceFromMidpoint) {
             minDistanceFromMidpoint = distanceFromMidpoint;
             currentSectionId = section.id;
-            console.log(viewportMidpoint);
+            console.log(currentSectionId);
         }
     });
 
+    // Make the current section highlighted
     const navLinks = document.querySelectorAll('header ul li a');
     navLinks.forEach((link) => {
         if (link.getAttribute('href') === '#' + currentSectionId) {
