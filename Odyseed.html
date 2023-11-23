@@ -3,30 +3,28 @@
     <head>
         <div class = "home" id="home"></div>
         <title>ODYSEED</title>
-        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="Odyseed.css">
     </head>
     <body>
         <header>    
             <a href="#home" class="logo">ODYSEED</a>
             <ul>
-                <li><a href="./Home.html">Home Page</a></li>
+                <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#work">My Contribution</a></li>
-                <li><a href="#contact">Video</a></li>
+                <li><a href="#work">My Contributions</a></li>
+                <li><a href="./Home.html">Home Page</a></li>
             </ul>
         </header>
         <section class ='home' id="home">
-            <img src = "stars.png" id="stars">
-            <img src = "moon.png" id="moon">
-            <h2 id="text">Project 1</h2>
+            <img src = "./Images/ODYSEED.png" id="background">
             <a href="#about" id="btn"> Explore </a>
         </section>
         <div class = "about" id = "about">
             <h2>
-                Here's my story...
+                Here's the story...
             </h2>
             <p>
-                <img src = "mugshot.png" id="mugshot">
+                <img src = "./Images/action.png" id="mugshot">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
                 Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
                 dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non 
@@ -46,7 +44,7 @@
         </div>
         <div class = "work" id = "work">
             <h2>
-                My Works
+                My Contributions
             </h2>
             <div class = 'columns'>
                 <div class = 'column'>
@@ -54,10 +52,10 @@
                         <a href="https://www.minecraft.net/en-us">
                             <img src = "temp.png" id="temp">    
                         </a>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
-                        dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non 
-                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
+                        ODYSEED is a project that was created for my GAME490 class at George Mason University. ODYSEED is an adventure style game 
+                        where the player has to go on a quest in order to save his island. On this project I was in charge of game programming.  
+                        I played a central role in bug fixes, enemy and boss AI, handling the git, abilities, balancing, and UI programming. If you're 
+                        interested in learning more click here for a more in depth presentaton.
                     </p>
                 </div>
                 <div class = 'column'>
@@ -83,43 +81,6 @@
                     </p>
                 </div>
             </div>
-            <h3>
-                Work History
-            </h3>
-            <div class="timeline">
-                <button class="event" 
-                    data-img="watermine.png" 
-                    data-title="The Watermine" 
-                    data-info="Supervisor" 
-                    data-list-items="Item 1,Item 2,Item 3">
-                    2011
-                </button>
-                <button class="event" 
-                    data-img="qui.png" 
-                    data-title="The Qui" 
-                    data-info="Server" 
-                    data-list-items="Item 1,Item 2,Item 3">
-                    2012
-                </button>
-                <button class="event" 
-                    data-img="idtech.png" 
-                    data-title="IdTech" 
-                    data-info="Programming instructor" 
-                    data-list-items="Item 1,Item 2,Item 3">
-                    2012
-                </button>
-            </div>
-            <div class="display">
-                <h3 id="eventTitle"></h3>
-                <div id="eventText">
-                    <img src="mugshot.png" alt="Event image" id="eventImage">
-                    <div class="text-content">
-                        <h4 id="eventDetails">Click an event to see more details</h4>
-                        <ul id="eventList"></ul>
-                    </div>
-                </div>
-            </div>            
-        </div>
         <div class = "contact" id = "contact">
             <h2>
                 Let's talk
