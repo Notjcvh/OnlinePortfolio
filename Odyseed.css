@@ -6,6 +6,8 @@
     --black:#1D1E23;
     --white:#FFFAFF;
     --brown:#837474;
+    --deg: -86deg;
+	--trans: all 0.4s ease 0s;
 }
 
 *{
@@ -17,10 +19,40 @@
     overscroll-behavior: none;
 }
 
+/* Scroll bar stylings */
+::-webkit-scrollbar{
+    width: 20px;
+}
+
+/* Scroll bar track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px var(--black);
+    background: var(--light-black);
+  }
+  
+  /* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--light-blue);
+    border-radius: 5px;
+    box-shadow: inset 0 0 5px var(--light-black);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--dark-blue);
+    transform: scale(1.2);
+}
+
 body{
     min-height: 100vh;
-    background: linear-gradient(var(--black), var(--light-blue));
+    background: var(--black);
 }
+
+body *,
+body *:before,
+body *:after {
+	box-sizing: border-box;
+}
+
 
 /* Link Stylings */
 a{
@@ -116,6 +148,7 @@ section img{
     object-fit: cover;
     pointer-events: none;
     opacity: 0.8;
+    
     /* transition: 0.2s; */
 }
 
@@ -158,8 +191,9 @@ section img{
 p img#mugshot{
     float: left;
     margin-right: 20px;
-    width: 30.5%;
+    width: 12.5%;
     height: auto;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 3px, rgba(255, 255, 255, 0.20) 0px 3px 6px;
 }
 
 .about h2{
@@ -181,124 +215,193 @@ p img#mugshot{
     display: grid;
     grid-template-columns: 1fr;
     gap: 20px;
+    display: inline-block;
 }
 
-
+/* Work Header */
 .work h2{
+    font-size: 3.5em;
     margin: auto;
     text-align: center;
     width: 75%;
     padding: 10px;
+    color: var(--dark-blue);
     border-bottom: 2px solid var(--light-black);
 }
 
-.work h3{
-    margin: auto;
-    text-align: center;
-    width: 75%;
-    padding: 10px;
+/* Content Window */
+.content {
+	width: auto;
+    max-height: 30em;
+    overflow-y: auto;
+    overflow-x: hidden;
+    box-shadow: inset 0 0 5px var(--light-black);
+    margin-top: 10px;
 }
 
-/* Colums of Work Stylings */
-.columns{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+/* List of Contributiton tabs */
+.contributions {
+	padding: 4em 0 4em 4.5em;
+	margin: 0;
 }
 
-/* Indivdual Column's Stylings */
-.column{
-    padding: 2em;
-    border-radius: 0.3em;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 3px, rgba(255, 255, 255, 0.20) 0px 3px 6px;
-    transition: 0.5s;
-    /* border: 3px dashed green; */
+/* Indivdual Contributiton tabs */
+.contribution {
+	margin: 1.5em 0 0.5em;
+	padding: 0.73em;
+	background: linear-gradient(
+		83deg,
+		var(--light-black) 0 97%,
+		#fff0 calc(97% + 1px) 100%
+	);
+	position: relative;
+	list-style: none;
+	display: inline-block;
+	transform: scale(0.85);
+	transition: var(--trans);
+    filter: drop-shadow(0px 20px 10px var(--black));
+    max-width: 75%;
+}
+/* Every other Contribution */
+.contribution:nth-of-type(even) {
+	text-align: right;
+    float: right;
+    margin-right: 5em;
+	background: linear-gradient(
+		-83deg,
+		var(--light-black) 0 97%,
+		#fff0 calc(97% + 1px) 100%
+	);
 }
 
-.column:hover{
-    transform: translateY(-20px);
-    /* border: 3px dashed green; */
+/* Thumbnail for each tab */
+.thumb {
+	width: 180px;
+	height: 180px;
+	float: left;
+	margin-right: 1.25em;
+	background: linear-gradient(
+		var(--deg),
+		var(--light-blue) 0 70%,
+		var(--dark-blue) 0% 100%
+	);
+	transition: var(--trans);
+	border-radius: 0.25em;
+	overflow: hidden;
+	margin-left: -3em;
+	padding: 0.5em;
 }
 
-/* Images in the Columns */
-p img#temp{
-    float: left;
-    margin: 5px;
-    width: 97%;
-    height: auto;
-    border: 3px solid wheat;
+/* Every other Thumbnail */
+.contribution:nth-of-type(even) .thumb {
+	float: right;
+	margin-left: 2em;
+	margin-right: -5em;
 }
 
-/* Timeline Stylings */
-.timeline {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-    width: 90%;
-    padding-left: 10%;
+.thumb img {
+	width: 100%;
+	height: 100%;
+	border-radius: 0.25em;
+	filter: grayscale(1);
+	background: var(--light-black);
 }
 
-/* Timeline Button Stylings */
-
-/* Button Text */
-button{
-    color: var(--light-blue);
-    font-size: 1.2em;
+.contribution:hover {
+	transform: scale(1);
+	transition: var(--trans);
+	filter: drop-shadow(0px 20px 10px var(--light-blue));
 }
 
-button:hover{
-    color: var(--white);
+.contribution:hover .thumb {
+	padding: 0.1em;
+	transition: var(--trans);
 }
 
-/* Button Body */
-.event {
-    padding: 10px;
-    cursor: pointer;
-    background-color: var(--dark-blue);
-    border-radius: 10px;
-    transition: background-color 0.3s;
-    width: 200px;
-    height: 50px;
-    outline: none; 
-    text-decoration-color: var(--white);
+
+.contribution:hover .thumb img {
+	filter: none;
+	transition: var(--trans);
 }
 
-.event:hover {
-    background-color: var(--light-black);
-    box-shadow: rgba(0, 0, 0, 0.16) 3px 6px 6px, rgba(255, 255, 255, 0.20) 0px 3px 6px;
+.description {
+	padding-top: 1vmin;
 }
 
-/* Work Text Stylings */
-.work h2{
-    font-size: 3.5em;
-    margin-bottom: 10px;
+.description p {
     color: var(--dark-blue);
+	padding: 0 2em;
+	margin-bottom: 1em;
 }
 
-.work p{
-    font-size: 1em;
-    color:var(--light-blue);
+.work h3 {
+	background: linear-gradient(180deg, var(--black) 60%, var(--light-black) 0 100%);
+	display: inline;
+	position: absolute;
+	margin: 0;
+	margin-top: -2.25em;
+	left: 9vmin;
+	padding: 0.5em 0.75em;
+	color: var(--dark-blue);
+	border-radius: 0.25em;
+	font-size: 1.35em;
+	transform-origin: left bottom;
 }
 
-.work ul{
-    color: var(--light-blue);
+.contribution:nth-of-type(even) h3 {
+	left: inherit;
+	right: 9vmin;
+	transform-origin: right bottom;
+	background: linear-gradient(-180deg, var(--black) 60%, var(--light-black) 0 100%);
 }
+
+.contribution:hover h3 {
+	transition: var(--trans);
+	background: linear-gradient(180deg, var(--light-black) 59%, var(--black) 0 100%);
+}
+
+.description p a {
+	display: inline-block;
+	margin: 0.5em 0 0 0;
+	background: var(--black);
+	color: var(--light-blue);
+	padding: 0.1em 0.5em 0.35em;
+	border-radius: 0.5em;
+	text-decoration: none;
+	transition: var(--trans);
+}
+.description p a:hover {
+	transition: var(--trans);
+	color: var(--light-black);
+	background: var(--light-blue);
+	font-weight: bold;
+}
+
+.description p a img {
+	float: left;
+	width: 22px;
+	filter: invert(1);
+	border-radius: 0.15em;
+	padding: 2px;
+	background: #fff;
+	margin-right: 2px;
+}
+
 
 /* Contact Stylings */
-.contact{
+.video{
     position: relative;
     padding: 100px;
     background-color: var(--black);   
 }
 
-.contact h2{
+.video h2{
     font-size: 3.5em;
     margin-bottom: 10px;
     color: var(--dark-blue);
 }
 
-.contact p{
+.video p{
     font-size: 1em;
     color:var(--light-blue)
 }

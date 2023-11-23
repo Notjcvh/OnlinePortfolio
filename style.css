@@ -168,7 +168,7 @@ section img#mountains_front{
 p img#mugshot{
     float: left;
     margin-right: 20px;
-    width: 19.5%;
+    width: 15.5%;
     height: auto;
 }
 
@@ -188,7 +188,7 @@ p img#mugshot{
     position: relative;
     padding: 100px;
     background-color: var(--black);
-    display: grid;
+    display: grid, inline-block;
     grid-template-columns: 1fr;
     gap: 20px;
 }
