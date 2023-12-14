@@ -170,6 +170,7 @@ p img#mugshot{
     margin-right: 20px;
     width: 15.5%;
     height: auto;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 3px, rgba(255, 255, 255, 0.20) 0px 3px 6px;
 }
 
 .about h2{
@@ -214,6 +215,7 @@ p img#mugshot{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
+    padding-top: 20px;
 }
 
 /* Indivdual Column's Stylings */

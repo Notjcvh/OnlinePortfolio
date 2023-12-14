@@ -21,7 +21,7 @@ const typeEffect = () => {
         } else if (isDeleting && charIndex > 0) {
             if (wordIndex == 3){
                 hasFinished = true;
-                document.getElementById("button").style.top = 28 + "em";
+                document.getElementById("button").style.top = 60 + "%";
                 return;
             }
             // If condition is true, remove the previous character

@@ -61,7 +61,7 @@ h1 span.stop-blinking::before {
   background-color: var(--white);
   border-radius: 1em;
   padding: 0.5em 1em;
-  top: 50em;
+  top: 90%;
   transition: top 1s;
 }
 
